@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎭 Mafia v2.0 — Professional</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 🎯 O'yin Sarlavhasi -->
+<header>
+    <h1 class="title">🎭 Mafia v2.0</h1>
+</header>
+
+<!-- 🛠 O'yinchi Qo'shish va Boshlash -->
+<section id="setup">
+    <input id="playerName" placeholder="O'yinchi ismi" />
+    <button onclick="Main.addPlayer()">Qo‘shish</button>
+    <button onclick="Main.startGame()">Boshlash</button>
+
+    <h2>O‘yinchilar</h2>
+    <div id="playerList"></div>
+</section>
+
+<!-- 🕹 O'yin maydoni -->
+<section id="game" style="display:none;">
+    <h2 id="phaseTitle"></h2>
+    <div id="playerArea"></div>
+</section>
+
+<!-- 🔹 Rol popup -->
+<div id="rolePopup" class="popup">
+    <h2 id="roleText"></h2>
+    <button onclick="UI.closeRole()">Yopish</button>
+</div>
+
+<!-- 🌙 Tun popup -->
+<div id="nightPopup" class="popup">
+    <h2 id="nightTitle">🌙 Tun</h2>
+    <div id="nightActions"></div>
+    <button onclick="Night.end()">Tun tugadi</button>
+</div>
+
+<!-- ☀ Kun popup -->
+<div id="dayPopup" class="popup">
+    <h2 id="dayTitle">☀ Kun</h2>
+    <div id="dayEvents"></div>
+    <button onclick="Day.end()">Kun tugadi</button>
+</div>
+
+<!-- 🗳 Vote popup -->
+<div id="votePopup" class="popup">
+    <h2>Kim chiqariladi?</h2>
+    <div id="voteOptions"></div>
+</div>
+
+<!-- 🔊 Audio modullar -->
+<audio id="audioNight" src="assets/sounds/night.mp3"></audio>
+<audio id="audioKill" src="assets/sounds/kill.mp3"></audio>
+<audio id="audioDay" src="assets/sounds/day.mp3"></audio>
+<audio id="audioWin" src="assets/sounds/victory.mp3"></audio>
+<audio id="audioFail" src="assets/sounds/fail.mp3"></audio>
+
+<!-- 💻 JS modullar -->
+<script src="assets/js/audioEngine.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/roles.js"></script>
+<script src="assets/js/night.js"></script>
+<script src="assets/js/day.js"></script>
+<script src="assets/js/vote.js"></script>
+<script src="assets/js/win.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

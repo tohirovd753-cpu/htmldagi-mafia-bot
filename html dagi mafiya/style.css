@@ -1,0 +1,220 @@
+/* =============================== */
+/*        GLOBAL STYLE             */
+/* =============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background 1s ease-in-out;
+}
+
+/* =============================== */
+/*        HEADER / TITLE           */
+/* =============================== */
+
+header {
+    margin: 20px 0;
+}
+
+.title {
+    font-size: 3rem;
+    color: #ff0055;
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff3399;
+}
+
+/* =============================== */
+/*        PLAYER SETUP             */
+/* =============================== */
+
+#setup {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+#setup input {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+}
+
+#setup button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    background: linear-gradient(90deg, #ff0066, #ff33cc);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ff33cc;
+    transition: all 0.3s ease;
+}
+
+#setup button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff66cc;
+}
+
+/* =============================== */
+/*        PLAYER LIST              */
+/* =============================== */
+
+#playerList {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.playerCard {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    min-width: 100px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.playerCard.alive {
+    border: 2px solid #00ffcc;
+}
+
+.playerCard.dead {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+/* =============================== */
+/*        GAME SECTION             */
+/* =============================== */
+
+#game {
+    width: 90%;
+    max-width: 1000px;
+}
+
+#phaseTitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #ff3399;
+}
+
+#playerArea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* =============================== */
+/*        POPUPS                   */
+/* =============================== */
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(0,0,0,0.7);
+    padding: 30px 50px;
+    border-radius: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 30px #ff33cc;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.popup.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ff33cc;
+}
+
+.popup button {
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, #ff0066, #ff33cc);
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 10px #ff33cc;
+    transition: all 0.3s ease;
+}
+
+.popup button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff66cc;
+}
+
+/* =============================== */
+/*        NIGHT / DAY EFFECT       */
+/* =============================== */
+
+body.night {
+    background: linear-gradient(135deg, #0a0a2a, #1f1f4f, #12122b);
+    transition: background 1s ease-in-out;
+}
+
+body.day {
+    background: linear-gradient(135deg, #ffe3b3, #ffcc80, #ffd699);
+    transition: background 1s ease-in-out;
+    color: #222;
+}
+
+body.day .title {
+    color: #ff6600;
+    text-shadow: 0 0 10px #ffcc66;
+}
+
+/* =============================== */
+/*        BUTTON EFFECTS           */
+/* =============================== */
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* =============================== */
+/*        RESPONSIVE               */
+/* =============================== */
+
+@media (max-width: 768px) {
+    #setup {
+        width: 90%;
+        padding: 15px 20px;
+    }
+
+    #game {
+        width: 100%;
+    }
+
+    .popup {
+        width: 90%;
+        padding: 20px;
+    }
+}
